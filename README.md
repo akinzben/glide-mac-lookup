@@ -4,10 +4,25 @@ This project takes  mac-addresses or OUI from users and report the vendor(s) bac
 # Usage
 Change the .env.example to .env and add your database info
 
+## composer autoload
+RUN the below command to add composer autoload
+> composer dump-autoload
+
+# Database Connection
+Create Database named "glide_mac". 
+
 ### For mySQL
 DB_CONNECTION=mysql
+###
 DB_HOST=127.0.0.1
-DB_PORT=3306
+###
+DB_PORT=3306   //your localhost port may be different
+
+### Migrating Tables
+>php artisan migrate:reset
+#
+>php artisan migrate
+
 
 ## PHP artisan command to update OUI data
 php artisan oui:update
